@@ -1,0 +1,64 @@
+*{
+  margin: 0 auto;
+  padding: 0;
+  box-sizing: border-box;
+
+}
+
+body{
+  background-color: black;
+}
+
+#gameboy{
+  height: 890px;
+  width: 515px;
+  background-image: url("./images/gameboy.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  padding-top: 86px;
+}
+
+#display{
+  height: 267px;
+  width: 300px;
+  background-color: #DEEED6;
+}
+
+#player, #enemy{
+  height: 50%;
+}
+
+#enemy_sprite{
+  width: 40%;
+  height: 100%;
+  float: right;
+  background-image: url("./images/goblin.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+#enemy_data{
+  width: 60%;
+  height: 100%;
+  padding-top: 50px;
+  float: left;
+  padding-left: 10px;
+}
+
+#player_sprite{
+  width: 40%;
+  height: 100%;
+  float: left;
+  background-image: url("./images/knight.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+#player_data{
+  width: 60%;
+  height: 100%;
+  padding-top: 50px;
+  padding-right: 10px;
+  float: right;
+  text-align: right;
+}

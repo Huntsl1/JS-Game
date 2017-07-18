@@ -27,8 +27,6 @@ Player.prototype.attack = function(Enemy) {
   }
 };
 
-
-
 function Enemy (type,hp,miss,strength,speed,armor){
 this.type = type;
 this.hp = hp;
