@@ -1,0 +1,22 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-image: url('http://avante.biz/wp-content/uploads/Epic-Game-Wallpapers/Epic-Game-Wallpapers-006.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+
+
+
+}
+
+h1 {
+  text-align:center;
+}
+
+.container{
+  margin-top: 200px;
+}
