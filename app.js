@@ -1,15 +1,17 @@
-function Player (type,hp,miss,strength){
+function Player (type,hp,miss,strength,speed,armor){
 this.type = type;
 this.hp = hp;
 this.currenthp = hp;
 this.miss = miss;
 this.strength = strength;
+this.speed = speed;
+this.armor = armor;
 }
 
-var knight = new Player("knight", 100, 10, 20);
+var knight = new Player("knight", 100, 10, 20, 1, 5);
 console.log(knight);
 
-var wizard = new Player("wizard", 100, 25, 50);
+var wizard = new Player("wizard", 100, 25, 50, 2, 2);
 console.log(wizard);
 
 Player.prototype.attack = function(Enemy) {
@@ -27,21 +29,31 @@ Player.prototype.attack = function(Enemy) {
 
 
 
-function Enemy (type,hp,speed,armor){
+function Enemy (type,hp,miss,strength,speed,armor){
 this.type = type;
 this.hp = hp;
 this.currenthp = hp;
+this.miss = miss;
+this.strength = strength;
 this.speed = speed;
 this.armor = armor;
 }
 
-var goblin = new Enemy("goblin", 60, 2, 5);
+var goblin = new Enemy("goblin", 60, 10, 10, 2, 5);
 console.log(goblin);
 
-var demon = new Enemy("demon", 85, 1, 10);
+var demon = new Enemy("demon", 85, 20, 40, 1, 10);
 console.log(demon);
 
 Enemy.prototype.attack = function(Player) {
-  Player.currenthp -= Math.floor(Math.random() * 20);
+  if (Math.floor(Math.random() * 100)  <= (this.miss * Player.speed)){
+    console.log ("Dodge!");
+  } else {
+  Player.currenthp -= ((Math.floor(Math.random() * this.strength) + 10) - Player.armor);
+    if (Player.currenthp <= 0) {
+      console.log("You Died.");
+    } else {
   console.log(Player);
+    }
+  }
 };
