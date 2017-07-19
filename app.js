@@ -5,6 +5,10 @@ var enemyData = document.getElementById("enemy_data");
 var playerData = document.getElementById("player_data");
 var playerHealthBar = document.getElementById("player_health_bar");
 
+$(document.window).ready(function(){
+  $("#player_sprite").css("display", 'none');
+});
+
 function playAudioSword() {
   if (Math.floor(Math.random() * 100) <= 50){
     sword.volume = 0.5;
@@ -231,10 +235,10 @@ aButton.addEventListener("click", playAudioSword);
 
 
 
-$(document).ready(function(){
+/*$(document).ready(function(){
   $("#player_sprite").css("background-image", '#DEEED6');
 });
-//"enemy_sprite"
+//"enemy_sprite"*/
 
 var e = $('#character-select').val();
 
@@ -249,8 +253,8 @@ var knightImg = $('<img />',
                src: './images/knight.png',
              });
 
-$('#knight').click(function(){
-  knightImg.appendTo($('#player_sprite'));
+//$('#knight').click(function(){
+  //knightImg.appendTo($('#player_sprite'));
 });
 var goblinImg = $(
 
