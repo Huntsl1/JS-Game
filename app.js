@@ -81,6 +81,7 @@ Enemy.prototype.attack = function() {
   }
 };
 
+
 var aButton = document.getElementById("a_button");
 // console.log('aButton', aButton);
 //console.log(currentPlayer.attack);
@@ -88,3 +89,169 @@ var aButton = document.getElementById("a_button");
 aButton.addEventListener("click", currentPlayer.attack);
 aButton.addEventListener("click", currentEnemy.attack);
 aButton.addEventListener("click", playAudioSword);
+
+
+$()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+$(document).ready(function(){
+  $("#player_sprite").css("background-image", '#DEEED6');
+});
+//"enemy_sprite"
+
+var e = $('#character-select').val();
+
+if (e === [1]) {
+  $('player_sprite').css("background-image", "knight.png");
+} else {
+  $('player_sprite').css("background-image", "")
+}
+
+var knightImg = $('<img />',
+             { id: 'knight',
+               src: './images/knight.png',
+             });
+
+$('#knight').click(function(){
+  knightImg.appendTo($('#player_sprite'));
+});
+var goblinImg = $(
+
+  '<img />',
+  {id: 'goblin',
+  src: './images/goblin.png'
+
+});
+//$('#goblin')
