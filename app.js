@@ -236,7 +236,7 @@ var e = $('#character-select').val();
 if (e === [1]) {
   $('player_sprite').css("background-image", "knight.png");
 } else {
-  $('player_sprite').css("background-image", "")
+  $('player_sprite').css("background-image", "wizard.png")
 }
 
 var knightImg = $('<img />',
