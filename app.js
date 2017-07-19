@@ -3,6 +3,7 @@ var sword = document.getElementById("sword_swing");
 var sword2 = document.getElementById("sword_swing2");
 var enemyData = document.getElementById("enemy_data");
 var playerData = document.getElementById("player_data");
+var playerHealthBar = document.getElementById("player_health_bar");
 
 function playAudioSword() {
   if (Math.floor(Math.random() * 100) <= 50){
@@ -35,14 +36,14 @@ Player.prototype.attack = function() {
   var enemy = currentEnemy;
   var player = currentPlayer;
   if (Math.floor(Math.random() * 100)  <= (player.miss * enemy.speed)){
-    enemyData.innerHTML = "MISS!" + "\nENEMY HP: " + enemy.currenthp;
+    enemyData.innerText = "MISS!" + "\nHP: " + enemy.currenthp;
   } else {
     // console.log('currenthp',typeof enemy.currenthp);
     enemy.currenthp -= ((Math.floor(Math.random() * Number(player.strength)) + 10) - Number(enemy.armor));
     if (enemy.currenthp <= 0) {
-      enemyData.innerHTML = "ENEMY KILLED";
+      enemyData.innerText = "ENEMY KILLED";
     } else {
-      enemyData.innerHTML = 'ENEMY HP: ' + enemy.currenthp;
+      enemyData.innerText = 'HP: ' + enemy.currenthp;
     }
   }
 };
@@ -68,15 +69,20 @@ var currentEnemy = goblin;
 Enemy.prototype.attack = function() {
   var enemy = currentEnemy;
   var player = currentPlayer;
+
+  var playerHealth = ((player.currenthp * 100) / (player.hp));
+  console.log(playerHealth);
+  playerHealthBar.style.width = playerHealth.toString() + '%';
+
   if (Math.floor(Math.random() * 100)  <= (enemy.miss * player.speed)){
-    playerData.innerHTML = "DODGE!" + "\nHP: " + player.currenthp;
+    playerData.innerText = "DODGE!" + "\nHP: " + player.currenthp;
   } else {
 
     player.currenthp -= ((Math.floor(Math.random() * enemy.strength) + 10) - player.armor);
     if (player.currenthp <= 0) {
-      playerData.innerHTML = "YOU DIED";
+      playerData.innerText = "YOU DIED";
     } else {
-      playerData.innerHTML = 'HP: ' + player.currenthp;
+      playerData.innerText = 'HP: ' + player.currenthp;
     }
   }
 };
