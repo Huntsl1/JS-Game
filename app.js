@@ -1,4 +1,17 @@
 var aButton = document.getElementById("a_button");
+var sword = document.getElementById("sword_swing");
+var sword2 = document.getElementById("sword_swing2");
+var enemyData = document.getElementById("enemy_data");
+var playerData = document.getElementById("player_data");
+
+function playAudioSword() {
+  if (Math.floor(Math.random() * 100) <= 50){
+    sword.volume = 0.5;
+    sword.play();
+  } else {
+    sword2.play();
+  }
+}
 
 function Player (type,hp,miss,strength,speed,armor){
   this.type = type;
@@ -22,14 +35,14 @@ Player.prototype.attack = function() {
   var enemy = currentEnemy;
   var player = currentPlayer;
   if (Math.floor(Math.random() * 100)  <= (player.miss * enemy.speed)){
-    console.log ("Miss!");
+    enemyData.innerHTML = "MISS!" + "\nENEMY HP: " + enemy.currenthp;
   } else {
     // console.log('currenthp',typeof enemy.currenthp);
     enemy.currenthp -= ((Math.floor(Math.random() * Number(player.strength)) + 10) - Number(enemy.armor));
     if (enemy.currenthp <= 0) {
-      console.log("Dead.");
+      enemyData.innerHTML = "ENEMY KILLED";
     } else {
-    console.log('ENEMY HP', enemy.currenthp);
+      enemyData.innerHTML = 'ENEMY HP: ' + enemy.currenthp;
     }
   }
 };
@@ -56,13 +69,14 @@ Enemy.prototype.attack = function() {
   var enemy = currentEnemy;
   var player = currentPlayer;
   if (Math.floor(Math.random() * 100)  <= (enemy.miss * player.speed)){
-    console.log ("Dodge!");
+    playerData.innerHTML = "DODGE!" + "\nHP: " + player.currenthp;
   } else {
-  player.currenthp -= ((Math.floor(Math.random() * enemy.strength) + 10) - player.armor);
+
+    player.currenthp -= ((Math.floor(Math.random() * enemy.strength) + 10) - player.armor);
     if (player.currenthp <= 0) {
-      console.log("You Died.");
+      playerData.innerHTML = "YOU DIED";
     } else {
-  console.log('PLAYER HP', player.currenthp);
+      playerData.innerHTML = 'HP: ' + player.currenthp;
     }
   }
 };
@@ -73,3 +87,4 @@ var aButton = document.getElementById("a_button");
 
 aButton.addEventListener("click", currentPlayer.attack);
 aButton.addEventListener("click", currentEnemy.attack);
+aButton.addEventListener("click", playAudioSword);
