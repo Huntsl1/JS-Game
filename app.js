@@ -91,7 +91,6 @@ aButton.addEventListener("click", currentEnemy.attack);
 aButton.addEventListener("click", playAudioSword);
 
 
-$()
 
 
 
@@ -236,7 +235,7 @@ var e = $('#character-select').val();
 if (e === [1]) {
   $('player_sprite').css("background-image", "knight.png");
 } else {
-  $('player_sprite').css("background-image", "wizard.png")
+  $('player_sprite').css("background-image", "wizard.png");
 }
 
 var knightImg = $('<img />',
