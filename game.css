@@ -13,6 +13,12 @@ body{
   background-color: black;
 }
 
+.container{
+  float: left;
+  color: white;
+  width: 10%;
+}
+
 #gameboy{
   height: 890px;
   width: 515px;
@@ -79,12 +85,13 @@ body{
   width: 60%;
   float: right;
   height: 20%;
+  border: 2px solid black;
 }
 
 #player_health_bar{
   height: 100%;
   width: 100%;
-  background-color: black;
+  background: repeating-linear-gradient(-45deg, white, black 5%);
   margin: 0;
 }
 
