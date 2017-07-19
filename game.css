@@ -47,6 +47,7 @@ body{
   padding-top: 50px;
   float: left;
   padding-left: 10px;
+  font-weight: bold;
 }
 
 #player_sprite{
@@ -65,6 +66,7 @@ body{
   padding-right: 10px;
   float: right;
   text-align: right;
+  font-weight: bold;
 }
 
 #a_button{
