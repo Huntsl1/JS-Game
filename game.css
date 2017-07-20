@@ -42,7 +42,7 @@ body{
   padding-right: 20px;
 }
 
-#enemy_sprite{
+.goblin_sprite{
   width: 40%;
   height: 100%;
   float: right;
@@ -61,7 +61,23 @@ body{
   font-size: 18px;
 }
 
-#player_sprite{
+.player_sprite{
+  width: 40%;
+  height: 100%;
+  float: left;
+  background-image: url("./images/wizard.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.wizard_sprite{
+  width: 40%;
+  height: 100%;
+  float: left;
+  background-image: url("./images/wizard.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.knight_sprite{
   width: 40%;
   height: 100%;
   float: left;

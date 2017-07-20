@@ -12,9 +12,8 @@
 
       <label for="select-character">Select Your Character</label>
         <select class="form-control" id="character-select">
-
-      <option id = "wizard" value="0">Wizard</option>
-      <option id="knight" value="1">Knight</option>
+      <option value= "wizard">Wizard</option>
+      <option value="knight">Knight</option>
     </select>
     <button type="submit" class="btn">Start Your Destiny!</button>
 
@@ -22,11 +21,11 @@
     <div id="gameboy">
       <div id="display">
         <div id="enemy">
-          <div id="enemy_sprite"></div>
+          <div class ="goblin_sprite" id="enemy_sprite"></div>
           <div id="enemy_data"></div>
         </div>
         <div id="player">
-          <div id="player_sprite">
+          <div class="player_sprite" id="player_sprite">
           </div>
           <div id="player_data">
           </div>
@@ -44,7 +43,8 @@
     <audio controls id="sword_swing2">
       <source src="./audio/sword2.mp3" type="audio/mp3">
     </audio>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
     <script src="app.js" charset="utf-8"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   </body>
 </html>

@@ -5,9 +5,9 @@ var enemyData = document.getElementById("enemy_data");
 var playerData = document.getElementById("player_data");
 var playerHealthBar = document.getElementById("player_health_bar");
 
-$(document.window).ready(function(){
-  $("#player_sprite").css("display", 'none');
-});
+//$(document.window).ready(function(){
+  //$("#player_sprite").css("display", 'none');
+//});
 
 function playAudioSword() {
   if (Math.floor(Math.random() * 100) <= 50){
@@ -99,6 +99,24 @@ var aButton = document.getElementById("a_button");
 aButton.addEventListener("click", currentPlayer.attack);
 aButton.addEventListener("click", currentEnemy.attack);
 aButton.addEventListener("click", playAudioSword);
+
+$(function (){
+  $('#character-select').on('change', function(){
+    // console.log('here i am', $(this)[0].value);
+    var character = $(this)[0];
+    if (character.value == 'wizard') {
+      console.log('i am a wizard');
+      $('#player_sprite').attr('class', 'wizard_sprite');
+    } else {
+      console.log('i am a knight');
+      $('#player_sprite').attr('class', 'knight_sprite');
+  }
+   });
+ });
+
+
+
+
 
 
 
@@ -238,7 +256,7 @@ aButton.addEventListener("click", playAudioSword);
 /*$(document).ready(function(){
   $("#player_sprite").css("background-image", '#DEEED6');
 });
-//"enemy_sprite"*/
+//"enemy_sprite"
 
 var e = $('#character-select').val();
 
@@ -250,12 +268,12 @@ if (e === [1]) {
 
 var knightImg = $('<img />',
              { id: 'knight',
-               src: './images/knight.png',
+               src: './images/knight.png'
              });
 
 //$('#knight').click(function(){
   //knightImg.appendTo($('#player_sprite'));
-});
+
 var goblinImg = $(
 
   '<img />',
@@ -263,4 +281,4 @@ var goblinImg = $(
   src: './images/goblin.png'
 
 });
-//$('#goblin')
+//$('#goblin')*/
